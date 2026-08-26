@@ -2,7 +2,7 @@
 
 > Know where your wealth stands today.
 
-A wealth management companion for Muslims in Indonesia — built around Islamic financial principles (Zakat, Nisab, halal wealth tracking). This repository is built in public as a PM + developer portfolio, documenting the full product lifecycle from discovery through a working application.
+A wealth management companion for Muslims in Indonesia — built around Islamic financial principles: Zakat obligation tracking, Nisab threshold monitoring, and Haul period countdown. Built in public as a full-stack portfolio — covering product thinking, UI/UX design, and end-to-end engineering from requirements to a working application.
 
 ---
 
@@ -23,6 +23,7 @@ A wealth management companion for Muslims in Indonesia — built around Islamic 
 | Design | Figma (Flowbite Design System) |
 | Hosting (FE) | Vercel |
 | Hosting (BE) | Railway |
+| Gold Price API | logam-mulia-api (Antam, UBS, Galeri24, Pegadaian, etc.) |
 
 ---
 
@@ -35,7 +36,8 @@ barokah-wealth/
 │   ├── design/         # UX flows, wireframes, prototypes
 │   ├── engineering/    # Technical design, API, database schema
 │   └── management/     # Decision log, assumptions, open questions
-└── app/                # Django application (Phase 3)
+├── backend/            # Django application
+└── frontend/           # React + Vite application
 ```
 
 ---
@@ -44,37 +46,35 @@ barokah-wealth/
 
 | Phase | Description | Status |
 |---|---|---|
-| 1 | PM Documentation (docs 00–20) | 🟡 In Progress |
-| 2 | Portfolio site (MkDocs) | ⬜ Not started |
-| 3 | Barokah Wealth application (Django) | ⬜ Not started |
+| 1 | Product Documentation | 🟡 In Progress |
+| 2 | Backend (Django + DRF + Docker) | ⬜ Not started |
+| 3 | Frontend (React + Vite + Flowbite) | ⬜ Not started |
 
 ---
 
 ## Document Roadmap
 
+### Product
 | # | Document | Status |
 |---|---|---|
 | 00 | Product Vision | 🟡 Draft |
-| 01 | Market Research | ⬜ Not started |
-| 02 | Competitor Analysis | ⬜ Not started |
-| 03 | Product Strategy | ⬜ Not started |
-| 04 | User Personas | ⬜ Not started |
-| 05 | User Journey Map | ⬜ Not started |
-| 06 | Problem Statement | ⬜ Not started |
-| 07 | Feature Prioritization | ⬜ Not started |
-| 08 | Product Requirements Document (PRD) | ⬜ Not started |
-| 09 | Information Architecture | ⬜ Not started |
-| 10 | UX Flows | ⬜ Not started |
-| 11 | Wireframes | ⬜ Not started |
-| 12 | Design System | ⬜ Not started |
-| 13 | API Design | ⬜ Not started |
-| 14 | Database Schema | ⬜ Not started |
-| 15 | Technical Architecture | ⬜ Not started |
-| 16 | MVP Scope | ⬜ Not started |
-| 17 | Go-to-Market Strategy | ⬜ Not started |
-| 18 | Success Metrics | ⬜ Not started |
-| 19 | Risk Register | ⬜ Not started |
-| 20 | Launch Checklist | ⬜ Not started |
+| 01 | Product Requirements Document (PRD) | 🟡 Draft |
+
+### Design
+| # | Document | Status |
+|---|---|---|
+| 02 | UX Flows | ⬜ Not started |
+| 03 | Wireframes | ⬜ Not started |
+| 04 | Design System | ⬜ Not started |
+
+### Engineering
+| # | Document | Status |
+|---|---|---|
+| 05 | Technical Architecture | ⬜ Not started |
+| 06 | Database Schema | ⬜ Not started |
+| 07 | API Design | ⬜ Not started |
+
+> Documents are added incrementally as the product progresses. Focus is on shipping a working application first.
 
 ---
 
