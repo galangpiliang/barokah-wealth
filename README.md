@@ -8,7 +8,7 @@ A wealth management companion for Muslims in Indonesia — built around Islamic 
 
 ## Status
 
-🟡 In Progress — Phase 1: Product Documentation
+🟡 In Progress — Phase 2: Backend Development
 
 ---
 
@@ -46,8 +46,8 @@ barokah-wealth/
 
 | Phase | Description | Status |
 |---|---|---|
-| 1 | Product Documentation | 🟡 In Progress |
-| 2 | Backend (Django + DRF + Docker) | ⬜ Not started |
+| 1 | Product Documentation | 🟢 Core docs complete |
+| 2 | Backend (Django + DRF + Docker) | 🟡 In Progress |
 | 3 | Frontend (React + Vite + Flowbite) | ⬜ Not started |
 
 ---
@@ -57,8 +57,8 @@ barokah-wealth/
 ### Product
 | # | Document | Status |
 |---|---|---|
-| 00 | Product Vision | 🟡 Draft |
-| 01 | Product Requirements Document (PRD) | 🟡 Draft |
+| 00 | Product Vision | 🟢 Approved |
+| 01 | Product Requirements Document (PRD) | 🟢 Approved |
 
 ### Design
 | # | Document | Status |
@@ -70,9 +70,9 @@ barokah-wealth/
 ### Engineering
 | # | Document | Status |
 |---|---|---|
-| 05 | Technical Architecture | ⬜ Not started |
-| 06 | Database Schema | ⬜ Not started |
-| 07 | API Design | ⬜ Not started |
+| 05 | Technical Architecture | 🟢 Approved |
+| 06 | Database Schema | 🟢 Approved |
+| 07 | API Design | 🟡 Draft |
 
 > Documents are added incrementally as the product progresses. Focus is on shipping a working application first.
 

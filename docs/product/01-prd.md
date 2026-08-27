@@ -1,9 +1,6 @@
 # 01 — Product Requirements Document (PRD)
 
-**Barokah Wealth — MVP**
-**Version:** 1.0
-**Status:** Draft
-**Last updated:** 2026-08-26
+**Barokah Wealth**
 
 ---
 
@@ -205,5 +202,5 @@ Users can create multiple pockets of any type.
 
 ---
 
-*Document status: Draft*
+*Document status: Approved*
 *Last updated: 2026-08-26*

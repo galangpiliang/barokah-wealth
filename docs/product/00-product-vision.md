@@ -72,5 +72,5 @@ Future versions will expand to other Muslim-majority markets — Malaysia, Singa
 
 ---
 
-*Document status: Draft*
+*Document status: Approved*
 *Last updated: 2026-08-26*
