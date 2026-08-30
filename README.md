@@ -72,7 +72,7 @@ barokah-wealth/
 |---|---|---|
 | 05 | Technical Architecture | 🟢 Approved |
 | 06 | Database Schema | 🟢 Approved |
-| 07 | API Design | 🟡 Draft |
+| 07 | API Design | 🟢 Approved |
 
 > Documents are added incrementally as the product progresses. Focus is on shipping a working application first.
 

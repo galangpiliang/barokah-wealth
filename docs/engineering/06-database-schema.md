@@ -70,14 +70,14 @@ Applies to **any pocket type** — a gold purchase, a salary deposit, or a busin
 | pocket_id | FK → Pocket | any denomination |
 | direction | enum | `in` or `out` (replaces income/expense — works for both cash and gold buy/sell) |
 | amount | decimal | in pocket's native denomination |
-| price_at_transaction | decimal, required | IDR value per unit — pre-filled with today's price from GoldPriceLog (or live fetch if cache expired), user must confirm or edit before saving. If fetch fails, falls back to last known GoldPriceLog entry. If no log exists at all, field is blank but still required — user must manually enter. |
+| price_at_transaction | decimal, nullable | IDR value per unit at time of transaction — auto-filled from historical price API for non-IDR pockets, editable by user, null only if API fetch fails |
 | category | string | user-defined, defaults: Salary, Food, Transport, Other |
 | tags | array of strings | optional, user-defined |
 | note | text, nullable | optional |
 | date | date | |
 | created_at | datetime | |
 
-> **Gain/loss tracking (deferred to v2):** price_at_transaction is captured now so historical data exists when the feature is built later. No calculation or UI is built on this field in the MVP.
+> **Gain/loss tracking (deferred to v2):** `price_at_transaction` is captured now so historical data exists when the feature is built later. No calculation or UI is built on this field in the MVP.
 
 ---
 
@@ -132,12 +132,14 @@ Applies to **any pocket type** — a gold purchase, a salary deposit, or a busin
 ## 6. Notes for Implementation
 
 - `current_balance` on a pocket is derived from `initial_balance` + sum of transactions (`in` − `out`), denormalized and stored for performance, recalculated on each transaction write
-- When a user logs a transaction on a non-IDR pocket, backend pre-fills price_at_transaction with today's current price (from cache or live fetch). If fetch fails, falls back to the most recent GoldPriceLog entry. If no log exists, field is blank but the user must still manually enter a value before saving — it cannot be left empty.
+- When a user logs a transaction on a non-IDR pocket, backend auto-fetches the historical price for that date from the gold price history API and pre-fills `price_at_transaction`; user can edit before saving
 - If historical price fetch fails, `price_at_transaction` remains editable and empty — this is the only case it stays null
 - Nisab and wealth checks should run as a backend service function, not duplicated across multiple views
+- All primary keys use UUID4 rather than auto-incrementing integers. Rationale: prevents ID enumeration (a known vulnerability class for financial data — sequential IDs let someone guess adjacent records like `/transactions/43/` after seeing `/transactions/42/`). Native Django/Postgres UUIDField support, no extra dependencies needed.
+- All models include `updated_at` alongside `created_at`. No `created_by`/`updated_by` fields — every record already has a `user_id`, and MVP has no multi-editor scenario that would need separate audit fields.
 - Adding a new denomination (e.g. USD) in the future requires no schema change — only a new enum value and a corresponding price-fetching service
 
 ---
 
 *Document status: Approved*
-*Last updated: 2026-08-27*
+*Last updated: 2026-08-30*

@@ -78,6 +78,8 @@ React (Vite)  ──HTTP/JSON──►  Django REST Framework  ──►  Postgr
 - Reason: keeps API logic centralized, allows caching/rate-limit control, avoids CORS issues
 - Price fetched on-demand when a gold pocket loads, cached for 24 hours
 
+> **Addendum (2026-08-30):** Changed to a daily scheduled job instead of fetching on each request — avoids slow first-requests and duplicate calls. The API now just reads the latest saved price. Full details in Doc 07.
+
 ---
 
 ## 7. Backend Structure (Django apps)
@@ -118,4 +120,4 @@ frontend/
 ---
 
 *Document status: Approved*
-*Last updated: 2026-08-27*
+*Last updated: 2026-08-30*
